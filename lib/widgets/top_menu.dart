@@ -5,24 +5,24 @@ import 'package:project_test_unit/model/menu.dart';
 class HomeHeader extends StatelessWidget {
   final menuItems = <Menu>[
     Menu(
-      title: "Asian",
-      img: 'assets/icons/asianfood.svg',
+      title: "Deportivo",
+      img: 'assets/icons/car2.svg',
     ),
     Menu(
-      title: "Breakfast",
-      img: 'assets/icons/breakfast.svg',
+      title: "Moto",
+      img: 'assets/icons/moto.svg',
     ),
     Menu(
-      title: "Soup",
-      img: 'assets/icons/soup.svg',
+      title: "Urbano",
+      img: 'assets/icons/car3.svg',
     ),
     Menu(
-      title: "Fast Food",
-      img: 'assets/icons/pizza.svg',
+      title: "Camioneta",
+      img: 'assets/icons/car4.svg',
     ),
     Menu(
-      title: "Icecream",
-      img: 'assets/icons/summer.svg',
+      title: "Clasico",
+      img: 'assets/icons/car5.svg',
     ),
   ];
   @override

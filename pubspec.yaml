@@ -31,6 +31,9 @@ dependencies:
   font_awesome_flutter: ^8.4.0
   eva_icons_flutter: ^2.0.0
   flutter_svg: ^0.17.0
+  rxdart: ^0.23.1
+  http: ^0.12.0+4
+
 
 dev_dependencies:
   flutter_test:
@@ -75,10 +78,17 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   assets:
-      - assets/icons/asianfood.svg
+      - assets/icons/car1_black.svg
+      - assets/puntos.png
+      - assets/icons/ruta.png
       - assets/icons/breakfast.svg
       - assets/icons/soup.svg
       - assets/icons/pizza.svg
+      - assets/icons/moto.svg
+      - assets/icons/car2.svg
+      - assets/icons/car3.svg    
+      - assets/icons/car4.svg
+      - assets/icons/car5.svg              
       - assets/icons/summer.svg
       - assets/icons/foods/food1.jpg
       - assets/icons/foods/food2.jpg

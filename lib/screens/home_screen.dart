@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("Good morning, Bilguun", style: TextStyle(
+                  Text("Renta Vehiculos", style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 16.0
                   ),),
@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Icon(EvaIcons.searchOutline, color: Style.Colors.mainColor,),
-                    Text("Find a food or Restaurant", style: TextStyle(
+                    Text("Buscar vehiculo o marca", style: TextStyle(
                       color: Colors.grey[400],
                       fontSize: 16.0
                     ),),
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-            child: Text("Popular Food", style: TextStyle(
+            child: Text("Autos Populares", style: TextStyle(
               fontSize: 20.0,
               color: Style.Colors.titleColor
             ),),

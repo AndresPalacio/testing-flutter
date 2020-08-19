@@ -2,6 +2,7 @@ import 'dart:typed_data';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:project_test_unit/bloc/bottom_nav_bloc.dart';
+import 'package:project_test_unit/screens/rent_calculator.dart';
 import 'package:project_test_unit/style/theme.dart' as Style;
 
 import 'home_screen.dart';
@@ -44,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
               print(snapshot.data);// ejemplo aqui llamada navbar home
               return _alertArea();
             case NavBarItem.CART:
-              return _alertArea();
+              return RentCalculator();
             case NavBarItem.ACCOUNT:
               return _settingsArea();
           }
@@ -83,9 +84,9 @@ class _MainScreenState extends State<MainScreen> {
             BottomNavigationBarItem(
                 title: Padding(
                   padding: EdgeInsets.only(top: 5.0),
-                  child: Text('Users', style: TextStyle(fontSize: 10))),
-                icon: Icon(EvaIcons.heartOutline, color: Style.Colors.titleColor,),
-                activeIcon: Icon(EvaIcons.heart, color: Style.Colors.mainColor),
+                  child: Text('Calcular Alquiler', style: TextStyle(fontSize: 10))),
+                icon: Icon(EvaIcons.creditCardOutline, color: Style.Colors.titleColor,),
+                activeIcon: Icon(EvaIcons.creditCard, color: Style.Colors.mainColor),
                 ),
             BottomNavigationBarItem(
                 title: Padding(
