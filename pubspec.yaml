@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.4.0
   eva_icons_flutter: ^2.0.0
-  flutter_svg: ^0.17.0
+  flutter_svg: ^0.18.0
   rxdart: ^0.23.1
   http: ^0.12.0+4
   syncfusion_flutter_datepicker: any
@@ -85,22 +85,15 @@ flutter:
       - assets/icons/car-first.png
       - assets/icons/car-second.png
       - assets/icons/car-third.png
-      - assets/icons/breakfast.svg
-      - assets/icons/soup.svg
-      - assets/icons/pizza.svg
       - assets/icons/moto.svg
       - assets/icons/car2.svg
       - assets/icons/car3.svg    
       - assets/icons/car4.svg
       - assets/icons/car5.svg              
-      - assets/icons/summer.svg
-      - assets/icons/foods/food1.jpg
-      - assets/icons/foods/food2.jpg
-      - assets/icons/foods/food3.jpg
-      - assets/icons/foods/food4.jpg
-      - assets/icons/foods/food5.jpg
-      - assets/icons/foods/food6.jpg
-      - assets/icons/foods/food7.jpg
+      - assets/icons/car/carimage.jpg
+      - assets/icons/car/carimage2.jpg
+      - assets/icons/car/carimage3.jpg
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

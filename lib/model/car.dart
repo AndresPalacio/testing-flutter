@@ -1,14 +1,13 @@
-class Food {
-  String title;
+class Car{
+    String title;
   String img;
   String price;
   String rating;
-  Food(
+  Car(
       {this.title,
       this.img,
       this.price,
       this.rating
       });
 
-  
 }
