@@ -78,27 +78,15 @@ flutter:
           weight: 400
   assets:
       - assets/icons/car1_black.svg
-      - assets/puntos.png
-      - assets/icons/ruta.png
-      - assets/icons/breakfast.svg
-      - assets/icons/soup.svg
-      - assets/icons/pizza.svg
       - assets/icons/moto.svg
       - assets/icons/car2.svg
       - assets/icons/car3.svg    
       - assets/icons/car4.svg
       - assets/icons/car5.svg              
-      - assets/icons/summer.svg
-      - assets/icons/foods/carimage.jpg
-      - assets/icons/foods/carimage2.jpg
-      - assets/icons/foods/carimage3.jpg
-      - assets/icons/foods/food1.jpg
-      - assets/icons/foods/food2.jpg
-      - assets/icons/foods/food3.jpg
-      - assets/icons/foods/food4.jpg
-      - assets/icons/foods/food5.jpg
-      - assets/icons/foods/food6.jpg
-      - assets/icons/foods/food7.jpg
+      - assets/icons/car/carimage.jpg
+      - assets/icons/car/carimage2.jpg
+      - assets/icons/car/carimage3.jpg
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

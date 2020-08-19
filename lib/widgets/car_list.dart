@@ -1,26 +1,27 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:project_test_unit/model/car.dart';
 import 'package:project_test_unit/model/food.dart';
 import 'package:project_test_unit/style/theme.dart' as Style;
 
-class FoodList extends StatelessWidget {
-  final foodItems = <Food>[
-    Food(
+class CarList extends StatelessWidget {
+  final carItems = <Car>[
+    Car(
       title: "Clasico",
       price: "34.00",
-      img: 'assets/icons/foods/carimage.jpg',
+      img: 'assets/icons/car/carimage.jpg',
       rating: "4.2"
     ),
-    Food(
+    Car(
       title: "Automatico",
       price: "45.00",
-      img: 'assets/icons/foods/carimage2.jpg',
+      img: 'assets/icons/car/carimage2.jpg',
       rating: "4.2"
     ),
-    Food(
+    Car(
       title: "Deportivo",
       price: "10.00",
-      img: 'assets/icons/foods/carimage3.jpg',
+      img: 'assets/icons/car/carimage3.jpg',
       rating: "4.7"
     )
   ];
@@ -28,7 +29,7 @@ class FoodList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
         scrollDirection: Axis.horizontal,
-        children: foodItems.map<Widget>((Food food) {
+        children: carItems.map<Widget>((Car car) {
           return GestureDetector(
             onTap: () {
 
@@ -50,7 +51,7 @@ class FoodList extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(topLeft:Radius.circular(10), topRight:Radius.circular(10)),
                       image: DecorationImage(
-                        image: AssetImage(food.img),
+                        image: AssetImage(car.img),
                         fit: BoxFit.cover
                       )
                     ),
@@ -61,7 +62,7 @@ class FoodList extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Text(
-                      food.title,
+                      car.title,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 12.0),
@@ -79,7 +80,7 @@ class FoodList extends StatelessWidget {
                         Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Text(food.rating, style: TextStyle(
+                        Text(car.rating, style: TextStyle(
                           fontSize: 9.0,
                           color: Colors.black38
                         ),),
@@ -100,7 +101,7 @@ class FoodList extends StatelessWidget {
                         ),),
                       ],
                     ),
-                    Text( "\$" + food.price, style: TextStyle(
+                    Text( "\$" + car.price, style: TextStyle(
                       fontSize: 10.0,
                           color: Colors.black,
                           fontWeight: FontWeight.bold

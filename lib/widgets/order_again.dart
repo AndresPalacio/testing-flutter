@@ -1,34 +1,34 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:project_test_unit/model/food.dart';
+import 'package:project_test_unit/model/car.dart';
 import 'package:project_test_unit/style/theme.dart' as Style;
 
 class OrderAgain extends StatelessWidget {
-  final foodItems = <Food>[
-    Food(
+  final carItems = <Car>[
+    Car(
         title: "Clasico",
         price: "25.00",
-        img: 'assets/icons/foods/carimage.jpg',
+        img: 'assets/icons/car/carimage.jpg',
         rating: "4.2"),
-    Food(
+    Car(
         title: "Automatico",
         price: "20.00",
-        img: 'assets/icons/foods/carimage2.jpg',
+        img: 'assets/icons/car/carimage2.jpg',
         rating: "4.2"),
-    Food(
+    Car(
         title: "Deportivo",
         price: "13.00",
-        img: 'assets/icons/foods/carimage3.jpg',
+        img: 'assets/icons/car/carimage3.jpg',
         rating: "4.7")
   ];
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: foodItems.length * 100.0,
+      height: carItems.length * 100.0,
       child: ListView(
           scrollDirection: Axis.vertical,
           physics: NeverScrollableScrollPhysics(),
-          children: foodItems.map<Widget>((Food food) {
+          children: carItems.map<Widget>((Car car) {
             return Padding(
               padding:
                   const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
@@ -46,7 +46,7 @@ class OrderAgain extends StatelessWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
                           image: DecorationImage(
-                              image: AssetImage(food.img), fit: BoxFit.cover)),
+                              image: AssetImage(car.img), fit: BoxFit.cover)),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +58,7 @@ class OrderAgain extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                food.title,
+                                car.title,
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 14.0),
                               ),
@@ -73,7 +73,7 @@ class OrderAgain extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        food.rating,
+                                        car.rating,
                                         style: TextStyle(
                                             fontSize: 9.0,
                                             color: Colors.black38),
@@ -125,7 +125,7 @@ class OrderAgain extends StatelessWidget {
                         Column(
                           children: <Widget>[
                             Text(
-                              "\$" + food.price,
+                              "\$" + car.price,
                               style: TextStyle(
                                   fontSize: 10.0,
                                   color: Colors.black,
