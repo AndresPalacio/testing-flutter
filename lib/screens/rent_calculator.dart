@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project_test_unit/widgets/my_header.dart';
+import 'package:project_test_unit/widgets/cool_header.dart';
+import 'package:project_test_unit/widgets/poliza_list.dart';
+import 'package:project_test_unit/style/theme.dart' as Style;
 
 class RentCalculator extends StatefulWidget {
   @override
@@ -12,8 +14,8 @@ class _RentCalculatorState extends State<RentCalculator> {
   var _precio;
   var _dias;
   var _tipoVehiculo;
-  var tipoVehiculo= "Tipo vehiculos";
-  var _total;
+  var tipoVehiculo = "Tipo vehiculos";
+  var _total = 0;
   final List<String> _vehiculosData = <String>[
     "Name1",
     "Name2",
@@ -34,7 +36,7 @@ class _RentCalculatorState extends State<RentCalculator> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            MyHeader(
+            CoolHeader(
               text: "Calculadora de precios",
               offset: offset,
             ),
@@ -48,6 +50,18 @@ class _RentCalculatorState extends State<RentCalculator> {
               decoration: InputDecoration(
                   hintText: "Ingrese valor de alquiler por hora"),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Text(
+                "Póliza de seguro",
+                style:
+                    TextStyle(fontSize: 20.0, color: Style.Colors.titleColor),
+              ),
+            ),
+            Container(
+              height: 275,
+              child: PolizaList(),
+            ),
             RaisedButton(
               onPressed: () {
                 setState(() {
@@ -57,7 +71,8 @@ class _RentCalculatorState extends State<RentCalculator> {
               },
               child: Text("Submit"),
             ),
-            Text("Total $_total"),
+            Text("Total \$$_total Días: $_dias",
+                style: TextStyle(fontFamily: 'Alata', fontSize: 16)),
           ],
         ),
       ),
