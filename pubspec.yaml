@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.4.0
   eva_icons_flutter: ^2.0.0
-  flutter_svg: ^0.17.0
+  flutter_svg: ^0.18.0
   rxdart: ^0.23.1
   http: ^0.12.0+4
 
@@ -90,6 +90,9 @@ flutter:
       - assets/icons/car4.svg
       - assets/icons/car5.svg              
       - assets/icons/summer.svg
+      - assets/icons/foods/carimage.jpg
+      - assets/icons/foods/carimage2.jpg
+      - assets/icons/foods/carimage3.jpg
       - assets/icons/foods/food1.jpg
       - assets/icons/foods/food2.jpg
       - assets/icons/foods/food3.jpg
