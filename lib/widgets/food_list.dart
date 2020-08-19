@@ -6,21 +6,21 @@ import 'package:project_test_unit/style/theme.dart' as Style;
 class FoodList extends StatelessWidget {
   final foodItems = <Food>[
     Food(
-      title: "Jimmy's Steak",
+      title: "Clasico",
       price: "34.00",
-      img: 'assets/icons/foods/food5.jpg',
+      img: 'assets/icons/foods/carimage.jpg',
       rating: "4.2"
     ),
     Food(
-      title: "Butter Steak",
+      title: "Automatico",
       price: "45.00",
-      img: 'assets/icons/foods/food6.jpg',
+      img: 'assets/icons/foods/carimage2.jpg',
       rating: "4.2"
     ),
     Food(
-      title: "Sushi",
+      title: "Deportivo",
       price: "10.00",
-      img: 'assets/icons/foods/food7.jpg',
+      img: 'assets/icons/foods/carimage3.jpg',
       rating: "4.7"
     )
   ];

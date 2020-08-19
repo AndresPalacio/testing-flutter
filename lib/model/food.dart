@@ -1,4 +1,4 @@
-class Food {
+class GraphQLResponseParser {
   String title;
   String img;
   String price;
@@ -9,4 +9,9 @@ class Food {
       this.price,
       this.rating
       });
+
+  determineQueryType(data){
+
+  }
+  
 }

@@ -6,19 +6,19 @@ import 'package:project_test_unit/style/theme.dart' as Style;
 class OrderAgain extends StatelessWidget {
   final foodItems = <Food>[
     Food(
-        title: "Italian Pasta",
+        title: "Clasico",
         price: "25.00",
-        img: 'assets/icons/foods/food3.jpg',
+        img: 'assets/icons/foods/carimage.jpg',
         rating: "4.2"),
     Food(
-        title: "Pasta with Ham",
+        title: "Automatico",
         price: "20.00",
-        img: 'assets/icons/foods/food2.jpg',
+        img: 'assets/icons/foods/carimage2.jpg',
         rating: "4.2"),
     Food(
-        title: "Black Beef",
+        title: "Deportivo",
         price: "13.00",
-        img: 'assets/icons/foods/food4.jpg',
+        img: 'assets/icons/foods/carimage3.jpg',
         rating: "4.7")
   ];
   @override
