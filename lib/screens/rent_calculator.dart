@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project_test_unit/widgets/cool_header.dart';
 import 'package:project_test_unit/widgets/poliza_list.dart';
 import 'package:project_test_unit/style/theme.dart' as Style;
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class RentCalculator extends StatefulWidget {
   @override
@@ -40,39 +41,47 @@ class _RentCalculatorState extends State<RentCalculator> {
               text: "Calculadora de precios",
               offset: offset,
             ),
-            TextField(
-              controller: diasCon,
-              decoration: InputDecoration(hintText: "Ingrese dias de prestamo"),
-            ),
-            TextField(
-              controller: precioCon,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                  hintText: "Ingrese valor de alquiler por hora"),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: new MaterialButton(
+                  color: Colors.blue[200],
+                  onPressed: () async {
+                    SfDateRangePicker(
+                      onSelectionChanged: _onSelectionChanged,
+                      selectionMode: DateRangePickerSelectionMode.range,
+                    );
+                  },
+                  child: new Text("Seleecionar fecha de alquiler")),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: Text(
                 "Póliza de seguro",
-                style:
-                    TextStyle(fontSize: 20.0, color: Style.Colors.titleColor),
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Style.Colors.titleColor,
+                    fontFamily: 'Alata'),
               ),
             ),
             Container(
               height: 275,
               child: PolizaList(),
             ),
-            RaisedButton(
-              onPressed: () {
-                setState(() {
-                  _dias = diasCon.text;
-                  _precio = precioCon.text;
-                });
-              },
-              child: Text("Submit"),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Text(
+                "Total",
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Style.Colors.titleColor,
+                    fontFamily: 'Alata'),
+              ),
             ),
-            Text("Total \$$_total Días: $_dias",
-                style: TextStyle(fontFamily: 'Alata', fontSize: 16)),
+            Padding(
+                padding: const EdgeInsets.only(
+                    left: 20.0, right: 20.0, bottom: 30.0),
+                child: Text("\$$_total",
+                    style: TextStyle(fontFamily: 'Alata', fontSize: 16))),
           ],
         ),
       ),
@@ -81,5 +90,9 @@ class _RentCalculatorState extends State<RentCalculator> {
 
   calculate_rent(int dias, int precio) {
     final poliza = 150000;
+  }
+
+  void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
+    // TODO: implement your code here
   }
 }

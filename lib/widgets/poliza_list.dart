@@ -1,22 +1,28 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:project_test_unit/model/poliza.dart';
 
-class PolizaList extends StatelessWidget {
+class PolizaList extends StatefulWidget {
+  @override
+  _PolizaList createState() => _PolizaList();
+}
+
+class _PolizaList extends State<PolizaList> {
+  String selected = "none";
+
   final foodItems = <Poliza>[
     Poliza(
         title: "Todo riesgo",
-        img: 'assets/icons/foods/food5.jpg',
+        img: 'assets/icons/car-first.png',
         popular: true,
         price: 25),
     Poliza(
         title: "Terceros",
-        img: 'assets/icons/foods/food5.jpg',
+        img: 'assets/icons/car-second.png',
         popular: false,
         price: 16),
     Poliza(
         title: "Terceros ampliado",
-        img: 'assets/icons/foods/food5.jpg',
+        img: 'assets/icons/car-third.png',
         popular: false,
         price: 20)
   ];
@@ -26,14 +32,18 @@ class PolizaList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: foodItems.map<Widget>((Poliza poliza) {
           return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                setState(() {
+                  selected = poliza.title;
+                });
+              },
               child: Padding(
                 padding: EdgeInsets.only(
                     left: 10.0, top: 10.0, bottom: 30, right: 10.0),
                 child: Container(
                   width: 170,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: (selected == poliza.title) ? Colors.grey[100] : Colors.white,
                       border: Border.all(color: Colors.grey[300], width: 1.0),
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Column(
@@ -47,7 +57,7 @@ class PolizaList extends StatelessWidget {
                                 topLeft: Radius.circular(10),
                                 topRight: Radius.circular(10)),
                           ),
-                          child: Image.asset('assets/icons/foods/food5.jpg')),
+                          child: Image.asset(poliza.img)),
                       Padding(
                           padding: const EdgeInsets.only(left: 0),
                           child: Center(
