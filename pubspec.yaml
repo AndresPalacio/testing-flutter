@@ -34,6 +34,7 @@ dependencies:
   rxdart: ^0.23.1
   http: ^0.12.0+4
   syncfusion_flutter_datepicker: any
+  dropdownfield: ^1.0.3
 
 
 
@@ -80,8 +81,6 @@ flutter:
           weight: 400
   assets:
       - assets/icons/car1_black.svg
-      - assets/puntos.png
-      - assets/icons/ruta.png
       - assets/icons/car-first.png
       - assets/icons/car-second.png
       - assets/icons/car-third.png
