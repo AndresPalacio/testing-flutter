@@ -1,7 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:project_test_unit/model/car.dart';
-import 'package:project_test_unit/model/food.dart';
 import 'package:project_test_unit/style/theme.dart' as Style;
 
 class CarList extends StatelessWidget {

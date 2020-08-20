@@ -1,6 +1,6 @@
-import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_test_unit/bloc/logic.dart';
 import 'package:project_test_unit/model/poliza.dart';
 import 'package:project_test_unit/widgets/cool_header.dart';
 import 'package:project_test_unit/style/theme.dart' as Style;
@@ -13,10 +13,12 @@ class RentCalculator extends StatefulWidget {
 class _RentCalculatorState extends State<RentCalculator> {
   double offset = 0;
   final carSelected = TextEditingController();
+  final TextEditingController _controller = new TextEditingController();
+
   var _total = 0;
   String selected = "none";
   int selectedCar;
-  int selectedPoliza;
+  int selectedPoliza=120000;
 
   final carItems = <Poliza>[
     Poliza(
@@ -70,7 +72,7 @@ class _RentCalculatorState extends State<RentCalculator> {
             ),
             Container(
               padding: EdgeInsets.all(20.0),
-              child: Column(
+              child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -82,16 +84,29 @@ class _RentCalculatorState extends State<RentCalculator> {
                       color: Style.Colors.titleColor,
                     ),
                   ),
-                  DropDownField(
-                    controller: carSelected,
-                    hintText: "Seleccione el tipo de vehiculo",
-                    enabled: true,
-                    items: carTypeList,
-                    itemsVisibleInDropdown: 2,
-                    onValueChanged: (value) {
-                      selectedCar = arrayCar['$value'];
-                    },
-                  )
+                  new Padding(
+                   padding: const EdgeInsets.only(left: 5.0, right: 20.0),
+                    child: new Row(
+                      children: <Widget>[
+                        new Expanded(
+                            child: new TextField(controller: _controller,key: Key("fieldDropDownField"),)),
+                        new PopupMenuButton<String>(
+                          icon: const Icon(Icons.arrow_drop_down),
+                          onSelected: (String value) {
+                            selectedCar = arrayCar['$value'];
+                            _controller.text = value;
+                          },
+                          itemBuilder: (BuildContext context) {
+                            return carTypeList
+                                .map<PopupMenuItem<String>>((String value) {
+                              return new PopupMenuItem(
+                                  child: new Text(value), value: value);
+                            }).toList();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -166,8 +181,9 @@ class _RentCalculatorState extends State<RentCalculator> {
                   color: Colors.blue[200],
                   onPressed: () async {
                     int dias = int.parse(daysCon.text);
+                    print(_controller.text);
                     setState(() {
-                     _total = calculateRent(dias, selectedCar, selectedPoliza);                      
+                      _total = ProcessesLogic().calculateRent(dias, selectedCar, selectedPoliza);
                     });
                   },
                   child: new Text("Calcular")),
@@ -186,6 +202,7 @@ class _RentCalculatorState extends State<RentCalculator> {
                 padding: const EdgeInsets.only(
                     left: 20.0, right: 20.0, bottom: 30.0),
                 child: Text("\$$_total",
+                    key: Key("test"),
                     style: TextStyle(fontFamily: 'Alata', fontSize: 16))),
           ],
         ),
@@ -201,7 +218,5 @@ class _RentCalculatorState extends State<RentCalculator> {
     "Clasico"
   ];
 
-  int calculateRent(int days, int carPrice, int polizaPrice){
-      return (carPrice*days)+polizaPrice;
-  }
+
 }
