@@ -1,8 +1,8 @@
 class Car{
-    String title;
+  String title;
   String img;
-  String price;
-  String rating;
+  int price;
+  double rating;
   Car(
       {this.title,
       this.img,

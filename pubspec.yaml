@@ -33,13 +33,16 @@ dependencies:
   flutter_svg: ^0.18.0
   rxdart: ^0.23.1
   http: ^0.12.0+4
+  date_range_picker: ^1.0.3
+  intl: ^0.16.1
 
 
 
 
 dev_dependencies:
-  flutter_test:
+  flutter_driver:
     sdk: flutter
+  test: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

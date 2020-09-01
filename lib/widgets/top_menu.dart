@@ -57,6 +57,7 @@ class HomeHeader extends StatelessWidget {
                           new Container(
                               padding: const EdgeInsets.all(30.0),
                               child: const CircularProgressIndicator()),
+                              key: Key(menu.img),
                     ),
                   ),
                   SizedBox(
@@ -66,7 +67,9 @@ class HomeHeader extends StatelessWidget {
                     menu.title,
                     style: TextStyle(
                         color: Colors.black45,
-                        fontSize: 11.0),
+                        fontSize: 11.0
+                    ),
+                    key: Key(menu.title),
                   )
                 ],
               ),

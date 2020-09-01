@@ -2,7 +2,7 @@ import 'dart:typed_data';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:project_test_unit/bloc/bottom_nav_bloc.dart';
-import 'package:project_test_unit/screens/rent_calculator.dart';
+import 'package:project_test_unit/screens/calculator_screen.dart';
 import 'package:project_test_unit/style/theme.dart' as Style;
 
 import 'home_screen.dart';
@@ -34,20 +34,18 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: StreamBuilder<NavBarItem>(
-        stream: _bottomNavBarBloc.itemStream, // aqui va estar escuchando los cambios de las llamadas que se hacen al stream
-        initialData: _bottomNavBarBloc.defaultItem, // por defecto este valor
+        stream: _bottomNavBarBloc.itemStream, 
+        initialData: _bottomNavBarBloc.defaultItem,
         builder: (BuildContext context, AsyncSnapshot<NavBarItem> snapshot) {
-          switch (snapshot.data) { // cuando escucha un cambio de datos manda el screen
+          switch (snapshot.data) { 
             case NavBarItem.HOME:
-              print(snapshot.data);// ejemplo aqui llamada navbar home
               return HomeScreen();
             case NavBarItem.NEAR:
-              print(snapshot.data);// ejemplo aqui llamada navbar home
-              return _alertArea();
+              return CalculatorScreen();
             case NavBarItem.CART:
-              return RentCalculator();
+              return _testScreen();
             case NavBarItem.ACCOUNT:
-              return _settingsArea();
+              return _testScreen();
           }
           return Container();
         },
@@ -78,15 +76,15 @@ class _MainScreenState extends State<MainScreen> {
             BottomNavigationBarItem(
                 title: Padding(
                   padding: EdgeInsets.only(top: 5.0),
-                  child: Text('History', style: TextStyle(fontSize: 10))),
-                icon: Icon(EvaIcons.clockOutline, color: Style.Colors.titleColor,),
-                activeIcon: Icon(EvaIcons.clock, color: Style.Colors.mainColor),),
+                  child: Text('Calcular Alquiler', style: TextStyle(fontSize: 10))),
+                icon: Icon(EvaIcons.creditCardOutline, color: Style.Colors.titleColor,),
+                activeIcon: Icon(EvaIcons.creditCard, color: Style.Colors.mainColor),),
             BottomNavigationBarItem(
                 title: Padding(
                   padding: EdgeInsets.only(top: 5.0),
-                  child: Text('Calcular Alquiler', style: TextStyle(fontSize: 10))),
-                icon: Icon(EvaIcons.creditCardOutline, color: Style.Colors.titleColor,),
-                activeIcon: Icon(EvaIcons.creditCard, color: Style.Colors.mainColor),
+                  child: Text('Tiempo de alquiler', style: TextStyle(fontSize: 10))),
+                icon: Icon(EvaIcons.clockOutline, color: Style.Colors.titleColor,),
+                activeIcon: Icon(EvaIcons.clock, color: Style.Colors.mainColor),
                 ),
             BottomNavigationBarItem(
                 title: Padding(
@@ -100,20 +98,9 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
   }
-  Widget _alertArea() {
-    return Center(
-      child: Text(
-        'Test Screen',
-        style: TextStyle(
-          fontWeight: FontWeight.w700,
-          color: Colors.red,
-          fontSize: 25.0,
-        ),
-      ),
-    );
-  }
 
-  Widget _settingsArea() {
+
+  Widget _testScreen() {
     return Center(
       child: Text(
         'Test Screen',

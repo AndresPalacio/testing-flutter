@@ -7,21 +7,21 @@ class CarList extends StatelessWidget {
   final carItems = <Car>[
     Car(
       title: "Clasico",
-      price: "34.00",
+      price: 3400,
       img: 'assets/icons/car/carimage.jpg',
-      rating: "4.2"
+      rating: 5.0
     ),
     Car(
       title: "Automatico",
-      price: "45.00",
+      price: 4500,
       img: 'assets/icons/car/carimage2.jpg',
-      rating: "4.2"
+      rating: 3.2
     ),
     Car(
       title: "Deportivo",
-      price: "10.00",
-      img: 'assets/icons/car/carimage3.jpg',
-      rating: "4.7"
+      price: 1000,
+      img: 'assets/icons/car-third.png',
+      rating: 4.7
     )
   ];
   @override
@@ -79,7 +79,7 @@ class CarList extends StatelessWidget {
                         Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Text(car.rating, style: TextStyle(
+                        Text(car.rating.toString(), style: TextStyle(
                           fontSize: 9.0,
                           color: Colors.black38
                         ),),
@@ -100,7 +100,7 @@ class CarList extends StatelessWidget {
                         ),),
                       ],
                     ),
-                    Text( "\$" + car.price, style: TextStyle(
+                    Text( "\$" + car.price.toString(), style: TextStyle(
                       fontSize: 10.0,
                           color: Colors.black,
                           fontWeight: FontWeight.bold
