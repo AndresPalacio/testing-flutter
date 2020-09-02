@@ -20,7 +20,7 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
   DateTime _startDate = DateTime.now();
   DateTime _endDate = DateTime.now().add(Duration(days: 7));
 
-  final carItems = <Poliza>[
+  final tipoPoliza = <Poliza>[
     Poliza(
         title: "Todo riesgo",
         img: 'assets/icons/car-first.png',
@@ -131,13 +131,13 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
                   height: 160,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: carItems.length,
+                    itemCount: tipoPoliza.length,
                     itemBuilder: (BuildContext context, int position) {
                       return InkWell(
                         onTap: () {
                           setState(() {
                             selectedIndex = position;
-                            typePolicy = carItems[position].title;
+                            typePolicy = tipoPoliza[position].title;
                           });
                         },
                         child: Container(
@@ -165,9 +165,9 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
                             child: Column(
                               children: <Widget>[
                                 Image.asset(
-                                  carItems[position].img,
+                                  tipoPoliza[position].img,
                                 ),
-                                Text(carItems[position].title,
+                                Text(tipoPoliza[position].title,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
                               ],
@@ -224,8 +224,8 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
                       setState(() {
                         _total = ProcessesLogic().calculateRent(
                             difference,
-                            carItems[selectedIndex].price,
-                            int.parse(_opcionSeleccionada));
+                            int.parse(_opcionSeleccionada),
+                            tipoPoliza[selectedIndex].price);
                       });
                     },
                     child: new Text("Calcular",
