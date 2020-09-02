@@ -11,7 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,41 +23,48 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("Renta Vehiculos", style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16.0
-                  ),),
+                  Text(
+                    "Renta Vehiculos",
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      fontFamily: 'Alata',
+                      color: Style.Colors.titleColor,
+                    ),
+                  ),
                   Stack(
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(right: 1.0, top: 3.5),
-                        child: Icon(EvaIcons.bellOutline, size: 25.0,),
+                        child: Icon(
+                          EvaIcons.bellOutline,
+                          size: 25.0,
+                        ),
                       ),
                       Positioned(
-                          right: 0,
-                          top: 0,
-                                            child: Container(
+                        right: 0,
+                        top: 0,
+                        child: Container(
                           height: 15.0,
                           width: 15.0,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Style.Colors.mainColor,
-                            border: Border.all(
-                              width: 1.0,
-                              color: Colors.white
-                            ),
+                            border: Border.all(width: 1.0, color: Colors.white),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(left: 1.0, bottom: 1.0),
-                                child: Text("2", style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 7.0,
-                                  fontWeight: FontWeight.bold
-                                ),),
+                                padding: const EdgeInsets.only(
+                                    left: 1.0, bottom: 1.0),
+                                child: Text(
+                                  "2",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 7.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ],
                           ),
@@ -72,54 +78,31 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 20.0,
             ),
+            Container(
+              height: 140,
+              child: HomeHeader(),
+            ),
             Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0),
-              child: Container(
-                padding: EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  border: Border.all(
-                    width: 1.0,
-                    color: Colors.grey[300]
-                  )
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Icon(EvaIcons.searchOutline, color: Style.Colors.mainColor,),
-                    Text("Buscar vehiculo o marca", style: TextStyle(
-                      color: Colors.grey[400],
-                      fontSize: 16.0
-                    ),),
-                    Icon(EvaIcons.moreHorizotnalOutline, color: Style.Colors.mainColor,),
-                  ],
-                ),
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Text(
+                "Autos Populares",
+                style:
+                    TextStyle(fontSize: 20.0, color: Style.Colors.titleColor),
               ),
             ),
             Container(
-            height: 140,
-            child: HomeHeader(),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-            child: Text("Autos Populares", style: TextStyle(
-              fontSize: 20.0,
-              color: Style.Colors.titleColor
-            ),),
-          ),
-          Container(
-            height: 275,
-            child: CarList(),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-            child: Text("Top Car ", style: TextStyle(
-              fontSize: 20.0,
-              color: Style.Colors.titleColor
-            ),),
-            
-          ),
-          TopCar()
+              height: 275,
+              child: CarList(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Text(
+                "Top Car ",
+                style:
+                    TextStyle(fontSize: 20.0, color: Style.Colors.titleColor),
+              ),
+            ),
+            TopCar()
           ],
         ),
       ),

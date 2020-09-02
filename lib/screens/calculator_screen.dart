@@ -97,8 +97,17 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
                     )
                   ],
                 ),
+                Divider(),
+                Text(
+                  'Tipo de vehiculo',
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    fontFamily: 'Alata',
+                    color: Style.Colors.titleColor,
+                  ),
+                ),
                 Container(
-                    margin: EdgeInsets.symmetric(vertical: 30),
+                    margin: EdgeInsets.symmetric(vertical: 10),
                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                     height: 60,
                     width: double.infinity,
@@ -110,6 +119,14 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
                       ),
                     ),
                     child: _crearDropdown()),
+                Text(
+                  'Tipo de poliza',
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    fontFamily: 'Alata',
+                    color: Style.Colors.titleColor,
+                  ),
+                ),
                 Container(
                   height: 160,
                   child: ListView.builder(
@@ -147,7 +164,9 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
                             ),
                             child: Column(
                               children: <Widget>[
-                                Image.asset(carItems[position].img,),
+                                Image.asset(
+                                  carItems[position].img,
+                                ),
                                 Text(carItems[position].title,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
@@ -164,7 +183,7 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0)),
-                   key: Key('datapicker'),
+                  key: Key('datapicker'),
                   elevation: 4.0,
                   onPressed: () async {
                     await displayDateRangePicker(context);
@@ -222,17 +241,17 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   child: ListTile(
-            title: Text(
-                  "Total",
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      color: Style.Colors.titleColor,
-                      fontFamily: 'Alata'),
-                ),
-            subtitle: Text("\$$_total",
-                    key: Key("test"),
-                    style: TextStyle(fontFamily: 'Alata', fontSize: 16)),
-          ),
+                    title: Text(
+                      "Total",
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          color: Style.Colors.titleColor,
+                          fontFamily: 'Alata'),
+                    ),
+                    subtitle: Text("\$$_total",
+                        key: Key("test"),
+                        style: TextStyle(fontFamily: 'Alata', fontSize: 16)),
+                  ),
                 ),
               ],
             ),
@@ -243,7 +262,7 @@ class _CalculatorScreenTwoState extends State<CalculatorScreen> {
   }
 
   Future displayDateRangePicker(BuildContext context) async {
-    final List<DateTime> picked = await DateRagePicker.showDatePicker(  
+    final List<DateTime> picked = await DateRagePicker.showDatePicker(
         context: context,
         initialFirstDate: _startDate,
         initialLastDate: _endDate,

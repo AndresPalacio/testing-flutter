@@ -20,7 +20,7 @@ class CarList extends StatelessWidget {
     Car(
       title: "Deportivo",
       price: 1000,
-      img: 'assets/icons/car-third.png',
+      img: 'assets/icons/car/carimage3.jpg',
       rating: 4.7
     )
   ];
