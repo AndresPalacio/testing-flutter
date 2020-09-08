@@ -4,9 +4,6 @@ class ProcessesLogic{
 
 
   int calculateRent(int days, int carPrice, int polizaPrice) {
-    print(days);
-    print(carPrice);
-    print(polizaPrice);
     return (carPrice * days) + polizaPrice;
   }
   
