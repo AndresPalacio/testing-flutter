@@ -1,67 +1,47 @@
+
+
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:project_test_unit/bloc/logic.dart';
 
 
 main(){
-
-  group("Grupo de pruebas process logic",(){
+  group("Grupo de pruebas de process logic", (){
 
     ProcessesLogic process;
 
-    setUpAll((){
+   setUpAll((){
 
-      process = new ProcessesLogic();
-
-    });
-
-
-   test("Prueba de calcular renta", (){
-
-     // Act
-
-     int result = process.calculateRent(4, 2000, 120000);
-
-
-    // Asssert
-
-    expect(result, 128000);
-
+     process = new ProcessesLogic();
 
 
    });
 
-   test("Calcular palindromo correcto", (){
 
+   test("Prueba calcular renta", (){
 
-      // Act
-
-      bool result = process.calculatePalindromo(292);
-      expect(result, true);
-
-
-   });
-
-  
-  test("Calcular Palindromo incorrecto",(){
-
-    // Act
-    bool result = process.calculatePalindromo(153);
+    int result = process.calculateRent(4, 2000, 120000);
     
-    // Assert
 
-    expect(result, false);
-
-
-  });
+    expect(result,128000);
 
 
-    test("Generar excepcion", (){
+   });
 
-      expect(()=> process.calculatePalindromo(1), throwsA(predicate((e)=> e is ArgumentError && e.message == 'This is a test exception')));
+   test("Calcular palindromo",(){
+      
+      bool result = process.calculatePalindromo(292);
 
-    });
-  
+      expect(result,true);
+      
+   });
 
+
+   test("Generar exepcion",(){
+     
+     expect(()=>process.calculatePalindromo(1),throwsA(predicate((e)=>e is ArgumentError && e.message == 'This is a test exception')));
+
+   });
 
 
   });
